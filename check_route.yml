@@ -1,0 +1,17 @@
+---
+- hosts: 172.16.1.4
+  tasks:
+  - name: run show version on remote devices
+    iosxr_command:
+      commands:
+        - ping {{ ip_address }}
+        - traceroute {{ ip_address }}
+        - show route {{ ip_address }}
+    register: result
+
+  - name: debug
+    debug:
+      msg:
+        - "{{ result.stdout_lines[0] }}"
+        - "{{ result.stdout_lines[1] }}"
+        - "{{ result.stdout_lines[2] }}"
