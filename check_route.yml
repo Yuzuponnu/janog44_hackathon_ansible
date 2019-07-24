@@ -1,12 +1,13 @@
 ---
 - hosts: 172.16.1.4
+  gather_facts: no
   tasks:
   - name: run show version on remote devices
     iosxr_command:
       commands:
-        - ping {{ ip_address }}
-        - traceroute {{ ip_address }}
-        - show route {{ ip_address }}
+        - ping 8.8.8.8
+        - traceroute 8.8.8.8
+        - show route 8.8.8.8
     register: result
 
   - name: debug
