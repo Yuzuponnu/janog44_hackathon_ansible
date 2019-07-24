@@ -1,0 +1,1 @@
+172.16.1.4 ansible_user=hackathon ansible_password=janog-hackathon ansible_connection=local

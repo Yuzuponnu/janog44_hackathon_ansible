@@ -1,0 +1,11 @@
+---
+- hosts: 172.16.1.4
+  tasks:
+  - name: run show version on remote devices
+    iosxr_command:
+      commands: show route 8.8.8.8
+ # commands: ping 8.8.8.8
+   register: result
+ - name: debug
+    debug:
+      msg: "{{ result.stdout_lines[0] }}"
