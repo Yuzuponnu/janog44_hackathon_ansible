@@ -1,0 +1,2 @@
+# janog44_hackathon_ansible
+janog44で使うansible playbookのレポジトリになります。
